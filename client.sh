@@ -32,12 +32,13 @@ loop() {
         echo "Enter Message: "
         read msg
         echo "$msg" > /dev/tcp/$(cat $HOST)/$(cat $PORT)
+        cat $LOG
 
     elif [ $opt == "n" ]; then
         cat $LOG
 
     else
-        echo "Invalid option"
+        cat $LOG
     fi
 }
 
